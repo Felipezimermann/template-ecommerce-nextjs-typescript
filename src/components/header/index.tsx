@@ -32,6 +32,7 @@ export default function Header(){
                         <a>Colchões</a>
                         <a>Comércio e Indústria</a>
                         <a>Comércio e Indústria</a>
+                        <a>Comércio e Indústria</a>
                     </nav>
                 </section>
                 

@@ -31,6 +31,7 @@ export default function Header(){
                         <a>Celular e Smartphone</a>
                         <a>Colchões</a>
                         <a>Comércio e Indústria</a>
+                        <a>Comércio e Indústria</a>
                     </nav>
                 </section>
                 

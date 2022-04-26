@@ -2,7 +2,7 @@ export default function Home(){
 
   return(
     <>
-      <h1>ola</h1>
+      <h1>teste</h1>
     </>
   )
 }

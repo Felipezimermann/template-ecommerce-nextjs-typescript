@@ -6,7 +6,7 @@ export default function Header(){
                     <div className="sectionTitle"><h3>Zimermann</h3></div>
                     <div className="sectionInputImg">
                         <input className="sectionInput" type='text'/>
-                        <img className="sectionImg" width={30} height={30} src="https://cdn-icons.flaticon.com/png/128/4208/premium/4208531.png?token=exp=1651021896~hmac=ec081bddf7304ad6b3a57d85a9d40bb3"></img>
+                        <img className="sectionImg" width={25} height={25} src="https://cdn-icons.flaticon.com/png/128/4208/premium/4208531.png?token=exp=1651021896~hmac=ec081bddf7304ad6b3a57d85a9d40bb3"></img>
                     </div>
                     <div className="sectionRegister"><b>Bem-vindo</b><br/><a href="#"><u>Entre ou se cadastre</u></a></div>
                     <div className="sectionCart">

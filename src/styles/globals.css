@@ -14,53 +14,9 @@ a {
 * {
   box-sizing: border-box;
 }
-.header{
-  background: rgb(0, 134, 255);
-  color: #ffff;
-}
-.section{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 6vw;
-}
-.sectionTitle{
-  font-family: 'fangsong';
-}
-.sectionInput{
+.input{
   height: 33px;
   width: 48vw;
   border-radius: 8px;
   border: 0px;
-}
-.sectionInput:focus {
-  box-shadow: 0 0 0 0;
-  outline: 0;
-}
-.sectionInputImg{
-  display: flex;
-  justify-items: center;
-}
-.sectionImg{
-  position: relative;
-  left: -40px;
-  cursor: pointer;
-}
-.sectionRegister{
-  font-size: 12px;
-}
-.sectionCart{
-  display: flex;
-  flex-direction:row ;
-  cursor: pointer;
-}
-.sectionCartQt{
-  width: 25px;
-  height: 23px;
-  background: rgb(73, 158, 37);
-  border-radius: 100%;
-  text-align: center;
-  position: relative;
-  top: 30px;
-  left: -20px;
 }

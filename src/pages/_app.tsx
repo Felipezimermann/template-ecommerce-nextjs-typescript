@@ -3,11 +3,13 @@ import type { AppProps } from 'next/app'
 import Header  from '../components/header'
 
 function MyApp({ Component, pageProps }: AppProps) {
+  function teste(){
+
+  }
   return(
     <>
-      <Header />
-      
-      <Component {...pageProps} />
+      <Header shopValue={0} />
+      <Component {...pageProps } />
     </>
   ) 
 }

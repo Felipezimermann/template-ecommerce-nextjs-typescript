@@ -1,19 +1,22 @@
-export default function Header(){
+import Style from '../../styles/Header.module.css'
+import Car from '../shop/Car'
+
+interface header{
+    shopValue? : number
+}
+
+export default function Header(prop:header){
     return(
         <>
-            <header className="header">
-                <section className="section">
-                    <div className="sectionTitle"><h3>Zimermann</h3></div>
-                    <div className="sectionInputImg">
-                        <input className="sectionInput" type='text'/>
-                        <img className="sectionImg" width={25} height={25} src="https://cdn-icons.flaticon.com/png/128/4208/premium/4208531.png?token=exp=1651021896~hmac=ec081bddf7304ad6b3a57d85a9d40bb3"></img>
+            <header className={Style.header}>
+                <section className={Style.section}>
+                    <div className={Style.sectionTitle}><h3>Zimermann</h3></div>
+                    <div className={Style.sectionInputImg}>
+                        <input className="input" type='text'/>
+                        <img className={Style.sectionImg} width={25} height={25} src="lupa.png"></img>
                     </div>
-                    <div className="sectionRegister"><b>Bem-vindo</b><br/><a href="#"><u>Entre ou se cadastre</u></a></div>
-                    <div className="sectionCart">
-                        <img width={50} height={50} src="https://cdn-icons-png.flaticon.com/128/7005/7005286.png" className="sectionCartImg"/>
-                        <div className="sectionCartQt">0</div>
-                    </div>
-                    
+                    <div className={Style.sectionRegister}><b>Bem-vindo</b><br/><a href="#"><u>Entre ou se cadastre</u></a></div>
+                    <Car value={prop.shopValue??0}/>    
                 </section>
                 <section>
                     <nav>

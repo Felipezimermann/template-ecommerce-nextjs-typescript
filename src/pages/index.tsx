@@ -2,7 +2,8 @@ import { useState } from 'react'
 import Car from '../components/shop/Car'
 
 interface home{
-  shopValue : (value:number)=>{}
+  cart:number
+  setcart : (value:number)=>{}
 }
 
 export default function Home(prop:home){
@@ -11,9 +12,12 @@ export default function Home(prop:home){
   const [value, setValue] = useState(0)
 
   function teste(){
-    prop.shopValue(value)
-    setValue(value +1)
+    let cart = prop.cart
+    prop.setcart(cart+ 1)
+   // setValue(value +1)
   }
+
+  console.log(prop)
 
   return(
     <>

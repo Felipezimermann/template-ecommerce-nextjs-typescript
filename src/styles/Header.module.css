@@ -34,3 +34,17 @@
 .sectionRegister {
     font-size: 12px;
 }
+.sectionMenuButton{
+    margin: 5px;
+    padding: 10px;
+}
+.sectionMenuButton:hover{
+    background: #ffff;
+    border-radius: 5px;
+    color: blue;   
+}
+.sectionMenuNavegation{
+    margin-top: 11px;
+    display: flex;
+    justify-content: center;
+}

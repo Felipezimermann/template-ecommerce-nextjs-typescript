@@ -1,11 +1,29 @@
 import Style from '../../styles/Header.module.css'
 import Car from '../shop/Car'
+import { useState } from 'react'
+import Modal from '../modal'
 
 interface header{
-    shoppingCart? : number
+    shoppingCart : number
 }
 
 export default function Header(prop:header){
+
+    const [dropdown, setDropdown] = useState("");
+
+
+
+  const controllNavModel = (event:string)=>{
+    switch(event){
+      case 'one':
+         setDropdown("displayBlock");
+        break
+        case 'off':
+          setDropdown('');
+        break
+    }
+  }
+  
 
     return(
         <>
@@ -21,7 +39,8 @@ export default function Header(prop:header){
                 </section>
                 <section>
                     <nav className={Style.sectionMenuNavegation}>
-                        <a className={Style.sectionMenuButton}>Todos os departamentos</a>
+                        <a onMouseOver={()=>controllNavModel('one')} className={Style.sectionMenuButton}>Todos os departamentos</a>
+                        <Modal NavModel={controllNavModel} dropdown={dropdown} />  
                         <a className={Style.sectionMenuButton}>Áudio</a>
                         <a className={Style.sectionMenuButton}>Artesanato</a>
                         <a className={Style.sectionMenuButton}>Automotivo</a>

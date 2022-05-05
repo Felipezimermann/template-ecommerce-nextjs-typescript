@@ -20,17 +20,6 @@ a {
   border-radius: 8px;
   border: 0px;
 }
-.modal{
-  background-color: white;
-  display: none;
-  position: fixed;
-  width: 200px;
-  height: 200px;
-  left: 67px;
-  top: 118px;
-  color: black;
-
-}
 .bottom{
   position:absolute;
 	top:0px;

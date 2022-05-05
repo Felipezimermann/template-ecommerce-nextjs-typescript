@@ -48,11 +48,4 @@
     display: flex;
     justify-content: center;
 }
-.modelTitulo{
-    position: relative;
-    top: -26px;
-    padding: 12px;
-    background: #ffff;
-    border-radius: 5px;
-    color: blue;   
-}
+

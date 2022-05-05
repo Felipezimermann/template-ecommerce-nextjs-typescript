@@ -10,12 +10,14 @@ interface header{
 export default function Header(prop:header){
 
     const [dropdown, setDropdown] = useState("");
+    const [navMenu, setNavMenu] = useState("modelNav_one");
 
 
 
   const controllNavModel = (event:string)=>{
     switch(event){
-      case 'one':
+      case 'modelNav_one':
+         setNavMenu('modelNav_one')
          setDropdown("displayBlock");
         break
         case 'off':
@@ -24,7 +26,6 @@ export default function Header(prop:header){
     }
   }
   
-
     return(
         <>
             <header className={Style.header}>
@@ -39,9 +40,9 @@ export default function Header(prop:header){
                 </section>
                 <section>
                     <nav className={Style.sectionMenuNavegation}>
-                        <a onMouseOver={()=>controllNavModel('one')} className={Style.sectionMenuButton}>Todos os departamentos</a>
-                        <Modal NavModel={controllNavModel} dropdown={dropdown} />  
-                        <a className={Style.sectionMenuButton}>Áudio</a>
+                        <a onMouseOver={()=>controllNavModel('modelNav_one')} className={Style.sectionMenuButton}>Todos os departamentos</a>
+                        <Modal menuNav={navMenu} NavModel={controllNavModel} dropdown={dropdown} />  
+                        <a  className={Style.sectionMenuButton}>Áudio</a>
                         <a className={Style.sectionMenuButton}>Artesanato</a>
                         <a className={Style.sectionMenuButton}>Automotivo</a>
                         <a className={Style.sectionMenuButton}>Ar e Ventilação</a>

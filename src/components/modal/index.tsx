@@ -1,15 +1,16 @@
 import Style from '../../styles/modalMenu.module.css'
-import { useState } from 'react'
+import { Children, useState } from 'react'
 interface modal{
     dropdown:string
     NavModel:Function,
     menuNav:string
+    Children?: React.ReactNode
 }
 
 
 export default function Modal(props:modal){
 
-    const {dropdown, NavModel ,menuNav} = props
+    const {dropdown, NavModel ,menuNav,Children} = props
 
     const menuCSS = (style:string)=>{
 
@@ -24,46 +25,46 @@ export default function Modal(props:modal){
         <>
             <div  className={`${dropdown}  bottom`}>
                 <nav className={Style.sectionMenuNavegation}>
-                        <div>
+                        <div style={{color:'black'}} onMouseLeave={()=>NavModel('off')}>
                             <a className={Style[menuCSS('modelNav_one')]}>Todos os departamentos</a>
-                            <div  onMouseLeave={()=>NavModel('off')}  className={`${Style.modal} ${menuNav == 'modelNav_one'?'displayBlock':''} `}>
-                                <a  >Áudio</a>
+                            <div  className={`${Style.modal} ${menuNav == 'modelNav_one'?'displayBlock':''} `}>
+                                {Children}
                             </div>
                         </div>
-                        <div>
-                        <a className={Style[menuCSS('modelNav_two')]}>Todos os departamentos</a>
-                            <div  onMouseLeave={()=>NavModel('off')}  className={`${Style.modal} ${menuNav == 'modelNav_two'?'displayBlock':''} `}>
-                                <a  >Áudio</a>
+                        <div style={{color:'black'}} onMouseLeave={()=>NavModel('off')}>
+                        <a className={Style[menuCSS('modelNav_two')]}>Áudio</a>
+                            <div className={`${Style.modal} ${menuNav == 'modelNav_two'?'displayBlock':'displayNone'} `}>
+                                {Children}
                             </div>
                         </div>
-                        <div>
-                            <a className={Style.noneModel}>Artesanato</a>
-                            <div  onMouseLeave={()=>NavModel('off')}  className={Style.modal}>
-                                <a  >Áudio</a>
+                        <div style={{color:'black'}} onMouseLeave={()=>NavModel('off')} >
+                            <a className={Style[menuCSS('modelNav_three')]}>Artesanato</a>
+                            <div className={`${Style.modal} ${menuNav == 'modelNav_three'?'displayBlock':''} `}>
+                                {Children}
                             </div>
                         </div>
-                        <div>
-                            <a className={Style.noneModel}>Automotivo</a>
-                            <div  onMouseLeave={()=>NavModel('off')}  className={Style.modal}>
-                                <a  >Áudio</a>
+                        <div style={{color:'black'}} onMouseLeave={()=>NavModel('off')} >
+                            <a className={Style[menuCSS('modelNav_four')]}>Automotivo</a>
+                            <div className={`${Style.modal} ${menuNav == 'modelNav_four'?'displayBlock':''} `}>
+                                {Children}
                             </div>
                         </div>
-                        <div>
-                            <a className={Style.noneModel}>Ar e Ventilação</a>
-                            <div  onMouseLeave={()=>NavModel('off')}  className={Style.modal}>
-                                <a  >Áudio</a>
+                        <div style={{color:'black'}}  onMouseLeave={()=>NavModel('off')} >
+                            <a className={Style[menuCSS('modelNav_five')]}>Ar e Ventilação</a>
+                            <div className={`${Style.modal} ${menuNav == 'modelNav_five'?'displayBlock':''} `}>
+                                {Children}
                             </div>
                         </div>
-                        <div>
-                            <a className={Style.noneModel}>Eletrodomésticos</a>
-                            <div  onMouseLeave={()=>NavModel('off')}  className={Style.modal}>
-                                <a  >Áudio</a>
+                        <div style={{color:'black'}} onMouseLeave={()=>NavModel('off')} >
+                            <a className={Style[menuCSS('modelNav_six')]}>Eletrodomésticos</a>
+                            <div className={`${Style.modal} ${menuNav == 'modelNav_six'?'displayBlock':''} `}>
+                                {Children}
                             </div>
                         </div>
-                        <div>
-                            <a className={Style.noneModel}>Artigos para Festa</a>  
-                            <div  onMouseLeave={()=>NavModel('off')}  className={Style.modal}>
-                                <a  >Áudio</a>
+                        <div style={{color:'black'}} onMouseLeave={()=>NavModel('off')} >
+                            <a className={Style[menuCSS('modelNav_seven')]}>Artigos para Festa</a>  
+                            <div className={`${Style.modal} ${menuNav == 'modelNav_seven'?'displayBlock':''} `}>
+                                {Children}
                             </div>
                         </div>                        
                     </nav>

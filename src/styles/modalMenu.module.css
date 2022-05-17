@@ -14,12 +14,13 @@
 }
 .modal{
     background-color: white;
-    position: relative;
+    position: absolute;
     border-radius: 2px;
     top: 6px;
     left: 5px;
     padding: 10px;
     display: none;
+  
   }
   .noneModel{
     margin: 5px;

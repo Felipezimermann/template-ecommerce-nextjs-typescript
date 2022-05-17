@@ -1,12 +1,15 @@
 import { useState } from 'react'
 import Car from '../components/shop/Car'
 
+
 interface home{
   cart:number
   setcart : (value:number)=>{}
 }
 
+
 export default function Home(prop:home){
+
 
   const [nome, setNome] = useState('')
   const [value, setValue] = useState(0)

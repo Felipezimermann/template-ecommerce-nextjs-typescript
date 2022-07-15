@@ -1,26 +1,32 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
-import Header  from '../components/header'
-import {useState} from 'react'
+import "../styles/globals.css";
+import { LojaProps, LayoutProps } from "../interfaces/layouts";
 
+import { useState } from "react";
+import { props } from "../contexts/loja";
 
-function MyApp({ Component, pageProps }: AppProps) {
- 
-  const [cart, setcart] = useState(0)
-  
+function MyApp({ Component, pageProps }: LojaProps) {
+  const [sacola, setSacola] = useState(0);
 
+  pageProps = props({
+    carrinho: {
+      quantidadeIntens: sacola,
+      setQuantidadeIntens: setSacola,
+    },
+  });
 
-  pageProps = {cart,setcart}
+  const Layout =
+    Component.layoutProps?.layout ||
+    ((props: LayoutProps) => <>{props.children}</>);
 
-  return(
-    <> 
-      <Header shoppingCart={cart} />
-      <Component {...pageProps} />
-      <button >Click Here!</button>
-      <div>testes</div>
-      
+  const { carrinho } = pageProps;
+
+  return (
+    <>
+      <Layout carrinho={carrinho.quantidadeIntens}>
+        <Component {...pageProps} />
+      </Layout>
     </>
-  ) 
+  );
 }
 
-export default MyApp
+export default MyApp;

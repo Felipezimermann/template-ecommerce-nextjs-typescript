@@ -1,51 +1,56 @@
 .header {
-    background: rgb(0, 134, 255);
-    color: #ffff;
+  background: rgb(0, 134, 255);
+  color: #ffff;
 }
 
 .section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 6vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6vw;
+  margin-left: 88px;
 }
 
 .sectionTitle {
-    font-family: 'fangsong';
+  font-family: "fangsong";
+  position: relative;
+  top: 6px;
+  left: 0px;
 }
 
 .input:focus {
-    box-shadow: 0 0 0 0;
-    outline: 0;
+  box-shadow: 0 0 0 0;
+  outline: 0;
 }
 
 .sectionInputImg {
-    display: flex;
-    justify-items: center;
+  display: flex;
+  justify-items: center;
+  position: relative;
+  left: -30px;
 }
 
 .sectionImg {
-    position: relative;
-    left: -40px;
-    cursor: pointer;
-    top: 4px;
+  position: relative;
+  left: -40px;
+  cursor: pointer;
+  top: 4px;
 }
 
 .sectionRegister {
-    font-size: 12px;
+  font-size: 12px;
 }
-.sectionMenuButton{
-    margin: 5px;
-    padding: 10px;
+.sectionMenuButton {
+  margin: 5px;
+  padding: 10px;
 }
-.sectionMenuButton:hover{
-    background: #ffff;
-    border-radius: 5px;
-    color: blue;   
+.sectionMenuButton:hover {
+  background: #ffff;
+  border-radius: 5px;
+  color: blue;
 }
-.sectionMenuNavegation{
-    margin-top: 11px;
-    display: flex;
-    justify-content: center;
+.sectionMenuNavegation {
+  margin-top: 19px;
+  display: flex;
+  justify-content: center;
 }
-

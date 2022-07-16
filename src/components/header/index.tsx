@@ -1,7 +1,7 @@
 import Style from "../../styles/Header.module.css";
 import Car from "../shop/Car";
 import { useState } from "react";
-import Modal from "../modal";
+import Modal from "../menuModal";
 import { controllNavModel } from "../../contexts/modalHeaderNav";
 import Image from "next/image";
 

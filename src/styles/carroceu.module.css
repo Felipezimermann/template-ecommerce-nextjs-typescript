@@ -1,0 +1,9 @@
+.corpo {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  width: 227px;
+}
+.preco {
+  font-size: 12px;
+}

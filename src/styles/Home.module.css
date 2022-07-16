@@ -114,3 +114,27 @@
     flex-direction: column;
   }
 }
+
+.conteudo {
+  margin: 22px 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 80px;
+}
+.grupos_banners {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.sub_grupos_banners {
+  display: flex;
+  gap: 8px;
+}
+.grupos_produtos {
+  width: 100%;
+  min-height: 100px;
+  display: flex;
+  padding: 10px;
+  gap: 10px;
+}

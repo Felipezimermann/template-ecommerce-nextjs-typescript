@@ -3,32 +3,26 @@ import { LayoutLoja } from "../layouts/layoutLoja";
 import { interfaceLoja } from "../interfaces/layouts";
 import Car from "../components/shop/Car";
 import { interfacePageProps } from "../interfaces/loja";
-import { adicionarCarrinho } from "../contexts/home";
+import { buscarColecao } from "../contexts/home";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import Carroceu from "../components/produto/carroceu";
-import iCarroceu from "../interfaces/carroceu";
+import CardProduto from "../components/produto/card";
+import iCardProduto from "../interfaces/cards";
 
 const Home: interfaceLoja = (props: interfacePageProps) => {
   const { quantidadeIntens, setQuantidadeIntens } = props.carrinho;
+  const [coleccaoCelular, setcoleccaoCelular] = useState<iCardProduto[]>();
 
-  const produtos: iCarroceu[] = [
-    {
-      img: "celular.webp",
-      titulo: "Smartphone",
-      desconto: 10,
-      preco: "R$ 3.078.90",
-      precoDesconto: "R$ 1.979,10",
-      parcelado: "ou 9x de R$ 244,33 sem juros",
-    },
-    {
-      img: "imagem1.webp",
-      titulo: "Smartphone",
-      desconto: 10,
-      preco: "R$ 3.078.90",
-      precoDesconto: "R$ 1.979,10",
-    },
-  ];
+  useEffect(() => {
+    const carregaColecoes = async () => {
+      try {
+        setcoleccaoCelular(await buscarColecao({ codigo: 1 }));
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    carregaColecoes();
+  }, []);
 
   return (
     <div className={styles.conteudo}>
@@ -87,8 +81,8 @@ const Home: interfaceLoja = (props: interfacePageProps) => {
       <h2>💙 Os MELHORES da semana</h2>
       <div className={styles.grupos_produtos}>
         <>
-          {produtos.map((produto, key) => (
-            <Carroceu
+          {coleccaoCelular?.map((produto, key) => (
+            <CardProduto
               titulo={produto.titulo}
               desconto={produto.desconto}
               preco={produto.preco}
@@ -96,6 +90,7 @@ const Home: interfaceLoja = (props: interfacePageProps) => {
               img={produto.img}
               parcelado={produto.parcelado}
               key={key}
+              codigo={produto.codigo}
             />
           ))}
         </>

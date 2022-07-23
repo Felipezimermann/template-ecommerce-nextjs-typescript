@@ -16,7 +16,10 @@ const Home: interfaceLoja = (props: interfacePageProps) => {
   useEffect(() => {
     const carregaColecoes = async () => {
       try {
-        setcoleccaoCelular(await buscarColecao({ codigo: 1 }));
+        // setcoleccaoCelular(await buscarColecao({ codigo: 1 }));
+        buscarColecao({ codigo: 1 })
+          .then((dados) => setcoleccaoCelular(dados))
+          .catch((error) => console.log(error));
       } catch (error) {
         console.log(error);
       }
@@ -53,8 +56,8 @@ const Home: interfaceLoja = (props: interfacePageProps) => {
         <div>
           <Image
             src="/banner1.webp"
-            width={363}
-            height={163}
+            width={460}
+            height={200}
             alt="banner"
             style={{ borderRadius: "10px" }}
           />
@@ -62,8 +65,8 @@ const Home: interfaceLoja = (props: interfacePageProps) => {
         <div>
           <Image
             src="/banner2.webp"
-            width={363}
-            height={163}
+            width={460}
+            height={200}
             alt="banner"
             style={{ borderRadius: "10px" }}
           />
@@ -71,8 +74,8 @@ const Home: interfaceLoja = (props: interfacePageProps) => {
         <div>
           <Image
             src="/banner1.webp"
-            width={363}
-            height={163}
+            width={460}
+            height={200}
             alt="banner"
             style={{ borderRadius: "10px" }}
           />

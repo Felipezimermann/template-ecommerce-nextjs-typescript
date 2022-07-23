@@ -18,10 +18,10 @@ export default function handler(
     },
     {
       img: "imagem1.webp",
-      titulo: "Smartphone",
+      titulo: "fritadeira",
       desconto: 10,
-      preco: "R$ 3.078.90",
-      precoDesconto: "R$ 1.979,10",
+      preco: "R$ 2.078.90",
+      precoDesconto: "R$ 979,10",
       codigo: "4",
     },
   ];

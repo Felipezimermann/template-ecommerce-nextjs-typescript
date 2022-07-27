@@ -11,14 +11,13 @@ import iCardProduto from "../interfaces/cards";
 
 const Home: interfaceLoja = (props: interfacePageProps) => {
   const { quantidadeIntens, setQuantidadeIntens } = props.carrinho;
-  const [coleccaoCelular, setcoleccaoCelular] = useState<iCardProduto[]>();
+  const [coleccaoPromo, setColeccaoPromo] = useState<iCardProduto[]>();
 
   useEffect(() => {
     const carregaColecoes = async () => {
       try {
-        // setcoleccaoCelular(await buscarColecao({ codigo: 1 }));
         buscarColecao({ codigo: 1 })
-          .then((dados) => setcoleccaoCelular(dados))
+          .then((dados) => setColeccaoPromo(dados))
           .catch((error) => console.log(error));
       } catch (error) {
         console.log(error);
@@ -84,7 +83,7 @@ const Home: interfaceLoja = (props: interfacePageProps) => {
       <h2>💙 Os MELHORES da semana</h2>
       <div className={styles.grupos_produtos}>
         <>
-          {coleccaoCelular?.map((produto, key) => (
+          {coleccaoPromo?.map((produto, key) => (
             <CardProduto
               titulo={produto.titulo}
               desconto={produto.desconto}

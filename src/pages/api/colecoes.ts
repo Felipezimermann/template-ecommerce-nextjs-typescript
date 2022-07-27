@@ -8,7 +8,7 @@ export default function handler(
 ) {
   const produtos: iCardProduto[] = [
     {
-      img: "celular.webp",
+      img: "celulares/celular_1.webp",
       titulo: "Smartphone",
       desconto: 10,
       preco: "R$ 3.078.90",
@@ -18,7 +18,7 @@ export default function handler(
     },
     {
       img: "imagem1.webp",
-      titulo: "fritadeira",
+      titulo: "Fritadeira Elétrica sem Óleo/Air Fryer Mondial",
       desconto: 10,
       preco: "R$ 2.078.90",
       precoDesconto: "R$ 979,10",

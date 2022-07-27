@@ -4,25 +4,35 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import style from "../../../styles/produto.module.css";
 import ImagensProduto from "../../../components/produto/imagensProduto";
+import { infoProduto } from "../../../contexts/produto";
+import { iInfoProd } from "../../../interfaces/produto";
 
 const Produto: interfaceLoja = () => {
-  // const [codigoProduto, setCodigoProduto] = useState<any>();
   const route = useRouter();
 
-  useEffect(() => {}, [route.query.codigoProduto]);
+  const [dados, setDados] = useState<iInfoProd>();
+
+  useEffect(() => {
+    const infoProd = async () => {
+      const { codigoProduto } = route.query;
+      if (codigoProduto !== undefined) {
+        infoProduto(codigoProduto)
+          .then((resposta) => {
+            setDados(resposta);
+          })
+          .catch((error) => console.log(error));
+      }
+    };
+    infoProd();
+  }, [route.query]);
 
   return (
     <>
       <div className={style.corpo}>
-        <div className={style.menu}>
-          Celular e Smartphone iPhone iPhone 11 iPhone 11 Apple 64GB Branco 6,1”
-          12MP iOSs
-        </div>
-        <div className={style.titulo}>
-          iPhone 11 Apple 64GB Branco 6,1” 12MP iOS
-        </div>
+        <div className={style.menu}></div>
+        <div className={style.titulo}>{dados?.titulo}</div>
         <div className={style.imagens}>
-          <ImagensProduto />
+          <ImagensProduto imagens={dados?.imagens} />
         </div>
       </div>
     </>
